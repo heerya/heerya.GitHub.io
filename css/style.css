@@ -1,0 +1,41 @@
+*{padding: 0;margin: 0;}
+body{ font-family:"微软雅黑", "宋体", "楷体"; color: #2b2b2b; font-size:12px;}
+a{ text-decoration:none;}
+ul,ol{ list-style:none;}
+/*头部搜索*/
+.header{height: 50px;background-color: #f54343;}
+.header .logo{float: left; height: 50px;}
+.header .logo img{height: 50px;}
+
+.header .search{float:left; height:28px; width:177px; background:#fff; border-radius:8px; margin:12px;}
+.header .search input{ display:block; float:left;}
+.header .search .keyword{ width:110px; height:28px;border:none; border-left:1px solid #ccc; border-right:1px solid #ccc;-webkit-appearance: none;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.header .search .btn{border:none; border-radius:8px;width:25px; height:25px; background:url(file:///F|/sublineweb/images/serch.jpg) no-repeat; background-size: 100% 100%; float: left;}
+.header .search .text{ display:block; float:right;font-size:10px; color: #999; text-align:center;margin:7px;}
+
+.header .weather .text{ display:block;float: right;color:#FFF; font-size:9px; margin-right:20px;}
+.header .weather img{ float: right;padding-top:5px; padding-right:5px;}
+/*收拉列表*/
+.list{background-color: #fff;padding:8px 4px;}
+.list .list_btn{display: none;}
+.list li a{ display:block; float: left; color:#000; font-size:16px; text-align:center;width: 14.28%;white-space: nowrap;height: 30px;line-height: 30px;}
+.list li img{padding: 4px 2px;}
+/*轮播海报*/
+.banner{height:170px; border-bottom:2px #999 solid; position: relative;}
+.banner li{ position:absolute; top:0; left:0; display:none;}
+.banner img{height: 170px;}
+.banner p{color: #fff; position: absolute; bottom:20px; left: 20px; font-size:16px;}
+/*新闻内容*/
+.main {height:1000px;background-color: #fff; margin:15px}
+.main .top_title { padding: 5px; margin-bottom: 15px;}
+.main .top_title a{color: #0669bf; text-align: center; font-size: 18px;}
+.main .top_title span{display: block; float:right;color: #0669bf; font-size: 14px; text-align: center;}
+
+.main .top_new img{ display: block; float:left; height:20px;}
+.main .top_new span{ display: block; float:right; width:85%; font-size: 16px; color: #000;}
+
+.main .news dl{float: left; border-top: 1px solid #ddd; width: 99%; margin-top: 10px;}
+.main .news dd{float: left; width:70%;}
+.main .news dd p{float: right; color: #999;}
+.main .news dd span{ display: block;float:left; color: #000; font-size:17px; margin-top: 5px;}
+.main .news dt img{display: block;float: right; height: 60px; margin: 3px;}

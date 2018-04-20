@@ -1,41 +1,199 @@
----
-layout: page
-description: "博客页面"
----
+<!doctype html>
+<html>
+<head>
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"name="viewport">
+<meta content="telephone=no"name="format-detection">
+<title>凤凰网</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<script src="F:\sublineweb\js\swiper.min.js"></script>
+<script src="F:\sublineweb\js\jquery-1.11.3.min.js"></script>
+<script >
+    $(function(){
+        $(".list li img").click(function(){
+            $(".list_btn").css("display","block")
+            $(".list li .show").css("display","none")
+        })
+         $(".list li .hide").click(function(){
+            $(".list_btn").css("display","none")
+            $(".list li .show").css("display","block")
+        })
+         var size=$(".banner li").size();
+        $(".banner li").eq(0).show();//第一张图片显示
+        //手动轮播
+        $(".banner li").mouseover(function(){
+            var idx=$(this).index();
+            i=idx;
+            //手动放开后从当前图片自动轮播
+            $(".banner li").eq(idx).fadeIn().siblings("li").fadeOut();
+        })
+        
+        //自动轮播
+        var i=0;
+        var t=setInterval(move,2000)
+        $(".banner").hover(function(){
+            clearInterval(t);   
+        },function(){
+            t=setInterval(move,2000)
+        })
+        //运动向右动画函数
+        function move(){
+            i++;
+            if(i==size){
+                i=0;}
+            $(".banner li").eq(i).fadeIn().siblings("li").fadeOut();
+        }
+    })
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">            
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:150 }}
-        </div>
-    </a>
-    <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
+</script>
+</head>
+
+<body>
+<!--头部-->
+<div class="header">
+	<div class="logo">
+		<a href="#"><img src="images/logo.png"></a>
+	</div>
+	<div class="search">
+		<form>
+            <input type="submit" name="btn" class="btn" value="">
+			<input type="text" name="keyword" class="keyword" placeholder="14岁男孩研究生复试">
+            <span class="text">搜索</span>
+		</form>
+	</div>
+	<div class="weather">
+		<a href="#"><img src="images/weather.png"></a>
+        <a href="#" class="text">北京</a>
+	</div>
 </div>
 
-<hr>
-{% endfor %}
+<!--导航-->
+<div class="list">
+<ul>
+	<li><a href="#">新闻</a></li>
+    <li><a href="#">两会</a></li>
+    <li><a href="#">视频</a></li>
+    <li><a href="#">军事</a></li>
+    <li><a href="#">体育</a></li>
+    <li><a href="#">娱乐</a></li>
+    <li><a href="#">财经</a></li>
+    <li><a href="#">历史</a></li>
+    <li><a href="#">汽车</a></li>
+    <li><a href="#">社会</a></li>
+    <li><a href="#">房产</a></li>
+    <li><a href="#">科技</a></li>
+    <li><a href="#">大风号</a></li>
+    <li><a href="#">小说</a></li>
+    <li><a href="#">港澳</a></li>
+    <li><a href="#" style="position: relative;">酷站<span style="position: absolute;bottom: 20px; left: 50%; margin-left:16px; width:4px; display:block; height:4px;background-color: #f54343;border-radius:20px;"></span></a>
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
     </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
+    <li><a href="#">台湾</a></li>
+    <li><a href="#">智库</a></li>
+    <li><a href="#">NBA</a></li>
+    <li><a href="#">匠选</a></li>
+    <li><img class="show" src="images/show.jpg"></li>
+    <div class="list_btn">
+        <li><a href="#">评论</a></li>
+        <li><a href="#">图片</a></li>
+        <li><a href="#">游戏</a></li>
+        <li><a href="#">直播</a></li>
+        <li><a href="#">时尚</a></li>
+        <li><a href="#">旅游</a></li>
+        <li><a href="#">段子</a></li>
+        <li><a href="#">彩票</a></li>
+        <li><a href="#">FM</a></li>
+        <li><a href="#">健康</a></li>
+        <li><a href="#">VIP</a></li>
+        <li><a href="#">佛教</a></li>
+        <li><a href="#">文化</a></li>
+        <li><a href="#">国学</a></li>
+        <li><a href="#">公益</a></li>
+        <li><a href="#">动漫</a></li>
+        <li><a href="#">F1</a></li> 
+        <li><img class="hide" src="images/hide.jpg"></li>
+    </div>
 </ul>
-{% endif %}
+</div>
+
+<!--轮播-->
+<div class="banner">
+	<ul>
+    	<li>
+            <a href="#"><img src="images/1.png"/>
+                <p>推广|星巴克危情72小时 真相尽在快头条</p>
+            </a>
+        </li>
+        <li>
+            <a href="#"><img src="images/2.png"/>
+                <p>美国人评价中美贸易摩擦 竟呈现一边倒</p>
+            </a>
+        </li>
+        <li>
+            <a href="#"><img src="images/3.png"/>
+                <p>45岁女星16年后再开唱，一上台成这样…</p>
+            </a>
+        </li>
+        <li>
+            <a href="#"><img src="images/4.png"/>
+                <p>中国足球赛场再现丑陋一幕……</p>
+            </a>
+        </li>
+        <li>
+            <a href="#"><img src="images/5.png"/>
+                <p>这是让地方政府拒最高法督办的土地</p>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!--内容-->
+<div class="main">
+    <div class="top_title">
+        <a href="#">今日要闻</a>
+        <span>2018博鳌亚洲论坛年会</span>
+    </div>
+	<div class="top_new">
+		<img src="images/topnew.png">
+		<span>习近平的英雄情怀</span>
+	</div>
+	<div class="news">
+        <dl>
+		  <dd><a href="news.html"><span>新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容</span></a><p>42评论</p></dd>
+		  <dt><a href="news.html"><img src="images/1.jpg"></a></dt>
+	    </dl>
+		<dl>
+          <dd><a href="news.html"><span>新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容</span></a><p>1.1万评论</p></dd>
+          <dt><a href="news.html"><img src="images/2.jpg"></a></dt>
+        </dl>
+        <dl>
+          <dd><a href="news.html"><span>新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容</span></a><p>5325评论</p</dd>
+          <dt><a href="news.html"><img src="images/3.jpg"></a></dt>
+        </dl>
+        <dl>
+          <dd><a href="news.html"><span>新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容</span></a><p>42评论</p></dd>
+          <dt><a href="news.html"><img src="images/1.jpg"></a></dt>
+        </dl>
+        <dl>
+          <dd><a href="news.html"><span>新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容</span></a><p>广告.搜狗</p></dd>
+          <dt><a href="news.html"><img src="images/2.jpg"></a></dt>
+        </dl>
+        <dl>
+          <dd><a href="news.html"><span>新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容</span></a><p>42评论</p></dd>
+          <dt><a href="news.html"><img src="images/3.jpg"></a></dt>
+        </dl>
+        <dl>
+          <dd><a href="news.html"><span>新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容</span></a><p>42评论</p></dd>
+          <dt><a href="news.html"><img src="images/1.jpg"></a></dt>
+        </dl>
+        <dl>
+          <dd><a href="news.html"><span>新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容</span></a><p>42评论</p></dd>
+          <dt><a href="news.html"><img src="images/2.jpg"></a></dt>
+        </dl>
+	</div>
+
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"name="viewport">
+<meta content="telephone=no"name="format-detection">
+<title>凤凰网</title>
+<link rel="stylesheet" type="text/css" href="css/news.css">
+<script src="F:\sublineweb\js\jquery-1.11.3.min.js"></script>
+<script src="F:\sublineweb\js\jquery.mobile.custom.min.js"></script>
+<script>
+	$(function(){
+		//调整文字大小
+		var text=document.getElementById("size");
+		$(".news .text .size").click(function(){
+			if(text.innerHTML=="T大"){
+				text.innerHTML="T小";
+				$(".text p").css("font-size","20px")
+			}else{
+				text.innerHTML="T大";
+				$(".text p").css("font-size","18px")
+			}
+		})
+		//点击继续阅读显示全文
+		$(".jxyd_hide").click(function(){
+			$(".text p").css("display","block");
+			$(".jxyd_hide").css("display","none");
+		})
+		var size=$(".cmt_user li").size();
+		//有多少张图片就添加多少个按钮
+		for( var i=0;i<size; i++){
+			$(".num").append("<li></li>")	;
+		}
+		//按钮居中显示
+		var width=$(".num").outerWidth()/2;
+		$(".num").css("margin-left",-width);
+		$(".comment .cmt_user li").eq(0).show();//第一张图片显示
+		$(".comment .cmt_user .num li").eq(0).css("background","#0669bf");//第一张图片显示时，第一个按钮变蓝
+		//运动向右动画函数
+		function move(){
+			i++;
+			if(i==size){
+				i=0;}
+			$(".comment .cmt_user .pic li").eq(i).fadeIn().siblings("li").fadeOut();
+			$(".comment .cmt_user .num li").eq(i).css("background","#0669bf").siblings("li").css("background","#ccc")
+		}
+		//手动轮播
+		$(document).on("pagecreate",".comment .cmt_user .pic",function(){
+			$(".comment .cmt_user .pic li").on("swiperight",function(){
+				//$(this).css("background","#0669bf").siblings("li").css("background","#ccc")
+					//var idx=$(this).index();
+					//i=idx;//手动放开后从当前图片自动轮播
+					//$(".comment .cmt_user .pic li").eq(idx).fadeIn().siblings("li").fadeOut();
+					move();
+			})
+		});
+		//自动轮播
+		var i=0;
+		var t=setInterval(move,2000)
+		$(".comment .cmt_user").hover(function(){
+			clearInterval(t);	
+		},function(){
+			t=setInterval(move,2000)
+		})
+	})
+</script>
+</head>
+<body>
+	<div class="header">
+		<a href="index.html"><img class="left" src="images\logo2.png"></a>
+		<span><a href="#">资讯频道</a></span>
+		<a href="#"><img class="right" src="images\分享.png"></a>
+	</div>
+
+	<div class="news">
+		<div class="news_top_ad"><img src="images\adv.png"></div>
+		<div class="text">
+			<h1>亲手杀人被判死刑的副部，一次受贿达2000万</h1>
+			<span>2018-04-13 07:38</span>
+			<i id="size" class="size">T大</i>
+			<p>原标题：亲手杀人被判死刑的副部，一次受贿达2000万</p>
+			<p>撰文| 高楼</p>
+			<p>上月底，山西省吕梁市原副市长、10亿贪官张中生一审被判死刑，成为十八大后第二个被判死刑的官员。在他之前的，是内蒙古自治区政协原副主席赵黎平。</p>
+			<p>赵黎平是建国后唯一一个亲手杀人（其情妇）的省部级官员，这是他被判死刑的主要原因。2016年11月12日的《人民日报》刊登《杀人重罪就当依法严惩重判》称：他（赵黎平）有预谋作案，持枪追杀并在居民区开枪杀死被害人，抛尸时为泄愤又向被害人开枪射击，并用汽油焚尸灭迹，其所犯故意杀人罪犯罪性质、情节特别恶劣，犯罪手段特别残忍，罪行极其严重，社会危害极大、影响极其恶劣，且拒不认罪，应依法严惩。 </p>
+			<p><img src="http://p0.ifengimg.com/pmop/2018/0413/59A8B1FF40A30612F9A42B4431200848956592F8_size42_w626_h442.jpeg"\></p>
+			<p>法庭还审理查明，2008年至2010年，赵黎平利用担任内蒙古自治区公安厅厅长的职务便利，接受请托为有关公司和个人在收购股权、承揽工程、职务晋升等事项上谋取利益，多次收受请托人的钱款共计人民币2368万元。</p>
+			<p>长安街知事（微信ID：Capitalnews）查阅中国裁判文书网发现，赵黎平一次性受贿的金额就高达2000万。</p>
+			<div class="jxyd_hide">继续阅读</div>
+			<p style="display: none;">2010年，内蒙古公安厅下属的威信保安押运公司欲出售49%股权，包头市永盛成百货公司董事长孙某得知此事后，主动找到赵黎平商谈收购股份事宜。</p>
+			<p style="display: none;">见了几次面后，孙某主动问赵黎平有什么困难，赵黎平说最近想办点事需要笔钱，孙某说可以帮助解决2000万元。于是，赵黎平给了孙某一个账户，2010年2月8日，孙某向该账户打入2000万元。</p>
+			<p style="display: none;">收到钱后，赵黎平违反国有资产转让的有关规定，没有采取招拍挂等程序，安排威信公司负责人直接和孙某谈判收购事宜。后来，永盛成公司以5200万元获得威信公司49%股份。</p>
+			<p style="display: none;">当时赵黎平急需2000万元要做什么？判决书并没有披露。长安街知事注意到，赵黎平于2007年2月出任内蒙古自治区公安厅党委书记、厅长，12月担任自治区政府党组成员、主席助理，2010年5月，他晋升自治区副主席，跻身省部级干部行列。</p>
+			<p style="display: none;">长安街知事（微信ID：Capitalnews）还发现，赵黎平帮人从副处升到正处，收了50万。</p>
+			<p style="display: none;">2007年6、7月间，时任内蒙古自治区副处级干部的伊景林与其表弟吉日木图商量，由吉日木图出资帮助伊景林解决正处级。</p>
+			<p style="display: none;">2008年春节期间，吉日木图得知其朋友新吉乐图的妻子斯琴托娅是赵黎平的表妹，遂请他们帮忙。斯琴托娅找到表哥赵黎平，赵黎平同意帮忙。</p>
+			<p style="display: none;">2008年9月4日，在呼和浩特国贸大厦咖啡厅，新吉乐图和斯琴托娅向吉日木图提出需要活动费用，当日吉日木图通过农业银行将人民币80万元转到新吉乐图的农业银行卡上。9月5日，新吉乐图和斯琴托娅将50万元现金送给赵黎平，剩余的30万元他们自家购买了一辆丰田普锐斯汽车。</p>
+			<p style="display: none;">2009年底，经赵黎平安排，伊景林由刑事侦查总队副总队长提拔为正处级调研员，并于2010年10月12日调任为赤峰市公安局副局长（正处级）。</p>
+			<p style="display: none;">判决书披露，2010年内蒙古公安厅选拔副处级领导干部到盟市公安局交流任职，伊景林年龄偏大，本不符合选拔要求，但他自己主动报名，赵黎平得知后表示同意。公安厅一开始推荐伊景林去呼伦贝尔市公安局任职，对方不同意，在赵黎平的安排下，又推荐伊景林到赤峰市公安局任副局长。</p>
+			<p style="display: none;">据媒体披露，2012年赵黎平离任公安厅长前一周，突击提拔了十余名处级干部。</p>
+			<p style="display: none;">2017年5月26日上午，山西省太原市中级人民法院遵照最高人民法院院长签发的执行死刑命令，对赵黎平执行了死刑。</p>
+			<div class="zb">责任编辑人：陈思宇 PN121</div>
+		</div>
+	</div>
+	<div class="adv">
+		<div class="btn"><a href="#">打开APP阅读全文领5元现金红包</a></div>
+		<p>分享到</p>
+		<div class="qq"></div>
+		<div class="weibo"></div>
+	</div>
+	<div class="comment">
+		<div class="cmt_header">
+			<span class="hd_title"><a href="#">网友评论</a></span>
+			<span class="signal"><a>|</a></span>
+			<span class="hd_title_right"><a href="#">举报</a></span>
+			<span class="com_reply"><a>123</a>人参与</span>
+			<span class="com_text"><a>36</a>条评论</span>
+		</div>
+		<div class="cmt_form">
+			<form>
+				<div class="text">
+					<textarea name="content" class="form_text" cols="30" rows="10">文明上网，不传谣言，登录评论！</textarea>
+				</div>
+				<div class="submit_btn">
+					<img src="http://y0.ifengimg.com/a/2015/1130/face_1.png"/>
+					<span class="icon"></span>
+					<span class="btn">发表评论</span>
+				</div>
+
+			</form>
+			<span class="yjdl">一键登录：</span>
+			<a href="#">凤凰帐号</a>
+			<span class="zh"><a>|</a></span>
+			<a href="#">新浪帐号</a>
+		</div>
+		<div class="cmt_user">
+			<ul class="pic">
+				<li>
+					<span class="name" style=" font-size: 14px;">凤凰网友1</span>
+					<p>这是一条评论这是一条评论这是一条评论这是一条评论这是一条评论1111</p>
+					<span>2018-04-18 15:52</span>
+					<span style="display: inline-block;float: right;">136</span>
+					<img src="images\点赞.png"/>
+				</li>
+				<li>
+					<span class="name" style=" font-size: 14px;">凤凰网友2</span>
+					<p>这是一条评论这是一条评论这是一条评论这是一条评论这是一条评论2222</p>
+					<span>2018-04-18 15:52</span>
+					<span style="display: inline-block;float: right;">137</span>
+					<img src="images\点赞.png"/>
+				</li>
+				<li>
+					<span class="name" style=" font-size: 14px;">凤凰网友3</span>
+					<p>这是一条评论这是一条评论这是一条评论这是一条评论这是一条评论3333</p>
+					<span>2018-04-18 15:52</span>
+					<span style="display: inline-block;float: right;">138</span>
+					<img src="images\点赞.png"/>
+				</li>
+			</ul>
+			<ol class="num">
+			</ol>
+
+		</div>
+		<span>查看全部评论>></span>
+	</div>
+
+	<div class="extraNews">
+		<div class="title"><a>热点新闻</a></div>
+		<ul>
+			<li>
+				<a href="#">
+					<img src="http://d.ifengimg.com/w220_h144/p3.ifengimg.com/cmpp/2018/04/11/e4485ce6e7ed7ca0ce0e2575e7183839_size37_w180_h118.jpg"/>
+					<p>王健林带保镖坐地铁 网友：有幸和首富共享座驾</p>
+					<p>
+						<span>420评论</span>
+					</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="http://d.ifengimg.com/w220_h144/p3.ifengimg.com/cmpp/2018/04/11/e4485ce6e7ed7ca0ce0e2575e7183839_size37_w180_h118.jpg"/>
+					<p>王健林带保镖坐地铁 网友：有幸和首富共享座驾</p>
+					<p>
+						<span>420评论</span>
+					</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="http://d.ifengimg.com/w220_h144/p3.ifengimg.com/cmpp/2018/04/11/e4485ce6e7ed7ca0ce0e2575e7183839_size37_w180_h118.jpg"/>
+					<p>王健林带保镖坐地铁 网友：有幸和首富共享座驾</p>
+					<p>
+						<span>420评论</span>
+					</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="http://d.ifengimg.com/w220_h144/p3.ifengimg.com/cmpp/2018/04/11/e4485ce6e7ed7ca0ce0e2575e7183839_size37_w180_h118.jpg"/>
+					<p>王健林带保镖坐地铁 网友：有幸和首富共享座驾</p>
+					<p>
+						<span>420评论</span>
+					</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="http://d.ifengimg.com/w220_h144/p3.ifengimg.com/cmpp/2018/04/11/e4485ce6e7ed7ca0ce0e2575e7183839_size37_w180_h118.jpg"/>
+					<p>王健林带保镖坐地铁 网友：有幸和首富共享座驾</p>
+					<p>
+						<span>420评论</span>
+					</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

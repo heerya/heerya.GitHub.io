@@ -1,0 +1,138 @@
+*{padding: 0;margin: 0;}
+body{ font-family:"微软雅黑", "宋体", "楷体"; color: #2b2b2b; font-size:12px;}
+a{ text-decoration:none; color: #fff}
+ul,ol{ list-style:none;}
+/*头部*/
+.header{  width: 100%;height: 45px;background-color: #f54343;position: fixed; top:0; z-index: 999}
+.header.on{}
+.header .left{ margin:1px; float: left;}
+.header span{font-size:20px; color: #fff; display: block; float: left; margin: 10px 5px;}
+.header .right{ width: 40px; position: absolute;right:5px; top: 3px;}
+/*内容*/
+.news .news_top_ad{ margin-top: 45px;}
+.news .news_top_ad img{ width: 100% }
+.text h1{ font-size: 22px;color: #000000;text-align: justify;line-height: 28px; font-weight: 300; padding:15px; }
+.text span{font-size: 13px; color: #909090; margin-left: 15px;}
+.text i{ font-style: normal;background-color: #eee; border-radius:10px; display: block; float: right;
+ padding: 3px; margin: auto 15px; font-size:13px; }
+.text p{font-size: 18px;color: #000;line-height: 28px;text-align: justify;width: 92%;margin: 15px auto 0px;}
+.text p img{width: 100%}
+.text .jxyd_hide{
+	width: 100px;
+ 	height: 32px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 14px auto 0;
+    background: url(http://p0.ifengimg.com/29b92e35b2b20708/2017/24/xw.png) no-repeat 86px 12px;
+    background-size: 14px 8px;
+    color: #0669bf;
+    font-size: 16px;
+    line-height: 32px;
+    padding-left: 15px;
+    cursor: pointer;}
+.text .zb{
+	color: #000;
+    font-size: 14px;
+    text-align: right;
+    height: 20px;
+    line-height: 20px;
+    width: 94%;
+    margin: 0 auto;
+    margin-top: 20px;}
+/*分享*/
+.adv{ height: 140px; }
+.adv .btn{ width:92%;background-color: #f54343; height: 45px; margin:25px auto; border-radius: 5px;}
+.adv .btn a{display: block; color: #fff; line-height: 45px; font-weight:700; font-size: 16px; text-align: center;}
+.adv .qq{ width: 40px; height: 40px;background-image: url(http://p0.ifengimg.com/fe/iphone_ifeng/images/qqzone_4f07caa0.png);
+    background-size: cover; float: left; margin-right: 10px;}
+.adv .weibo{width: 40px; height: 40px;background-image: url(http://p0.ifengimg.com/fe/iphone_ifeng/images/weibo_15af91ba.png);
+    background-size: cover; float: left;}
+.adv p{ font-size: 18px; display: block; color: #000;width: 18%;float: left;margin: 12px; }
+/*评论*/
+.comment{ height: 400px; border-top:5px solid #eee;border-bottom:5px solid #eee; padding: 0 20px; position: relative;}
+.comment .cmt_header { margin-bottom: 8px; padding-top: 10px;}
+.comment .cmt_header a{ font-size: 16px; color:#0669bf;}
+.comment .form_text{
+	height: 88px;
+    width: 97.9%;
+    padding: 10px 1%;
+    border: 1px solid #dcdcdc;
+    -webkit-appearance: none;
+    font-size: 16px;
+    color: #999;}
+.comment .cmt_header .com_reply,.comment .cmt_header .com_text{
+	font-size: 12px;color: #999;display: inline-block; float: right;}
+.comment .cmt_header .com_reply a,.comment .cmt_header .com_text a{font-size: 12px;color:#0669bf;}
+.cmt_form .submit_btn{
+	width: 100%;
+    height: 35px;
+    border: 1px solid #dcdcdc;
+    border-top: 0;
+    background: #f7f7f7;
+	margin-bottom: 5px;}
+.cmt_form .submit_btn .icon{
+	display: inline-block;
+    width: 7px;
+    height: 4px;
+    margin:15px 0;
+    overflow: hidden;
+    background: url(http://y0.ifengimg.com/fe/F_comment_new/images/face-TriggerArr_b9713c54.gif) no-repeat 0 -4px;}
+.cmt_form .submit_btn .btn{
+	display: inline-block;
+    float: right;
+    width: 120px;
+    height:35px;
+    background: #0669bf;
+    text-align: center;
+    color: #fff;
+	font-size:18px;
+	line-height: 35px;}
+.cmt_form .submit_btn img{
+	float: left;
+    width: 22px;
+    height: 22px;
+    margin-right: 2px;
+    border: 1px solid transparent;
+	margin-top: 5px;}
+.cmt_form .yjdl{ color: #000; font-size: 16px; }
+.cmt_form >a{color: #999; font-size: 16px;}
+.comment .cmt_user{ border-bottom: 1px solid #ccc; margin-top: 10px; position: relative;}
+.comment .cmt_user .pic li{ display: none;  position:absolute; top:0; left:0;}
+.comment .cmt_user .pic li span{margin-bottom: 3px; color: #c5c5c5; line-height: 30px;}
+.comment .cmt_user .pic li img{ float: right; width: 15px; height: 15px; margin:6px 5px;}
+.comment .cmt_user .pic li p{ font-size: 16px;line-height: 1.4em;}
+.comment .cmt_user .num li{ width:10px; height: 3px; background-color: #ccc; display:inline-block; margin:0 3px;}
+.comment .cmt_user .num{ margin:10px 0; position: absolute; left: 50% ; top:100px;text-align:center;}
+.comment >span{
+	color: #0669bf;
+	display: block;
+    height: 35px;
+    width: 100%;
+    line-height: 35px;
+    font-size: 16px;
+	position: absolute; 
+	bottom: 10px;
+	text-align: center;
+	left: -10px;}
+/*热点新闻*/
+.extraNews{padding:0 20px;}
+.extraNews .title a{
+	font-size: 20px;
+    color: #0669bf;
+    height: 46px;
+    line-height: 46px;
+    font-weight: bold;}
+.extraNews ul li{ border-bottom: 1px solid #ccc; margin-bottom: 10px; }
+.extraNews ul li p{
+	line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+    font-size: 16px;
+    color: #000;
+    font-family: Microsoft YaHei;
+    text-align: justify;}
+.extraNews ul li img{
+	float: right;
+    margin-left: 25px;
+	height:70px;}
+.extraNews ul li span{ font-size: 12px; color: #eee; line-height: 12px; }

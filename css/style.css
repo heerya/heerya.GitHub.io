@@ -27,7 +27,13 @@ ul,ol{ list-style:none;}
 	color:#000;
 	border-left: 1px solid #eee;
 	border-right: 1px solid #eee;}
-.header .search .text{ display:block; float:right;font-size:12px; color: #ccc; text-align:center;margin:7px;}
+.header .search .text{ 
+	padding: 7px;
+	font-size:12px; 
+	color: #ccc; 
+	text-align:center;
+	line-height: 28px;
+}
 
 .header .weather .text{ display:block;float: right;color:#FFF; font-size:9px; margin-right:20px;}
 .header .weather img{ float: right;padding-top:5px; padding-right:5px;}
@@ -68,7 +74,14 @@ ul,ol{ list-style:none;}
 	position: relative;
 	padding-top: 5px;
 }
-.main .news li p{display: block; float:right; color: #999; position: absolute; right:110px; top:50px}
+.main .news li p{
+	display: block; 
+	float:right; 
+	color: #999; 
+	position: absolute; 
+	right:110px; 
+	bottom:5px;
+}
 .main .news li span{ display: block;float:left; color: #000; font-size:17px; margin-top: 5px; width: 70%;}
 .main .news li img{display: block;float: right; height: 60px; margin: 3px;}
 .main .news .hide{
@@ -112,10 +125,21 @@ ul,ol{ list-style:none;}
 	background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0, rgba(0,0,0,.8) 100%);
     color: #fff;
     text-align: left;}
-.zx .zx_news{ width:99%; height:500px; border-bottom: 1px solid #ddd;}
+.zx .zx_news{ 
+	width:99%; 
+	height:500px; 
+	border-bottom: 1px solid #ddd;
+}
 .zx .zx_news ul{float: left;  width: 99%; margin-top: 10px;}
 .zx .zx_news li{float: left; border-top: 1px solid #ddd; height:75px; position: relative;padding-top: 5px;}
-.zx .zx_news li p{display: block; float:right; color: #999; position: absolute; right:110px; top:50px}
+.zx .zx_news li p{
+	display: block; 
+	float:right; 
+	color: #999; 
+	position: absolute; 
+	right:110px; 
+	bottom: 5px;
+}
 .zx .zx_news li span{ display: block;float:left; color: #000; font-size:17px; margin-top: 5px; width: 70%;}
 .zx .zx_news li img{
 	display: block;

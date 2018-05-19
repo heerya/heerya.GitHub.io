@@ -96,13 +96,32 @@ ul,ol{ list-style:none;}
 	margin-top: 5px;}
 .cmt_form .yjdl{ color: #000; font-size: 16px; }
 .cmt_form >a{color: #999; font-size: 16px;}
-.comment .cmt_user{ border-bottom: 1px solid #ccc; margin-top: 10px; position: relative;}
-.comment .cmt_user .pic li{ display: none;  position:absolute; top:0; left:0;}
-.comment .cmt_user .pic li span{margin-bottom: 3px; color: #c5c5c5; line-height: 30px;}
-.comment .cmt_user .pic li img{ float: right; width: 15px; height: 15px; margin:6px 5px;}
-.comment .cmt_user .pic li p{ font-size: 16px;line-height: 1.4em;}
-.comment .cmt_user .num li{ width:10px; height: 3px; background-color: #ccc; display:inline-block; margin:0 3px;}
-.comment .cmt_user .num{ margin:10px 0; position: absolute; left: 50% ; top:100px;text-align:center;}
+.comment .swiper-container{ 
+    height: 120px;
+    border-top: 1px solid #ccc; 
+    margin-top: 10px; 
+    position: relative;
+}
+.comment .swiper-container .swiper-wrapper .swiper-slide span{
+    margin-bottom: 3px; 
+    color: #c5c5c5; 
+    line-height: 30px;
+}
+.comment .swiper-container .swiper-wrapper .swiper-slide img{ 
+    float: right; 
+    width: 15px; 
+    height: 15px; 
+    margin:6px 5px;
+}
+.comment .swiper-container .swiper-wrapper .swiper-slide p{ 
+    font-size: 16px;
+    line-height: 1.4em;
+}
+/*.swiper-pagination-bullet{
+    width: 10px;
+}
+.swiper-pagination-bullet-active{background:#0669bf;}*/
+/*为什么我改不了swiper的css样式？？？？*/
 .comment >span{
 	color: #0669bf;
 	display: block;
@@ -122,7 +141,7 @@ ul,ol{ list-style:none;}
     height: 46px;
     line-height: 46px;
     font-weight: bold;}
-.extraNews ul li{ border-bottom: 1px solid #ccc; margin-bottom: 10px; }
+.extraNews ul li{ border-bottom: 1px solid #ccc; margin-bottom: 10px; position: relative;}
 .extraNews ul li p{
 	line-height: 20px;
     height: 40px;
@@ -135,4 +154,4 @@ ul,ol{ list-style:none;}
 	float: right;
     margin-left: 25px;
 	height:70px;}
-.extraNews ul li span{ font-size: 12px; color: #eee; line-height: 12px; }
+.extraNews ul li span{ font-size: 12px; color: #ccc; line-height: 12px;position: absolute;left: 0;bottom:10px;}

@@ -1,0 +1,99 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.wrapper{
+	width: 100%;
+	height: 1000px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #eee;
+}
+.btn{
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	left:50px;
+	top: 50px;
+	background: url('images/start.png');
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+.box{
+	border-top: 1px solid yellow;
+	border-left: 1px solid yellow;
+	width: 500px;
+	height: 500px;
+	margin: 20px auto;
+	transform: perspective(800px) rotateX(30deg);
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+	display: none;
+}
+.flagBox{
+	text-align: center;
+	position: absolute;
+	top: 25px;
+	left: 50%;
+	margin-left: -100px;
+	height: 50px;
+	width: 200px;
+	color: #333;
+	font-size: 20px;
+	font-weight: bold;
+	display: none;
+}
+.alertBox{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: rgba(0,0,0,0.6);
+}
+.alertImg{
+	width: 100px;
+	height: 100px;
+	
+	background-size: 100% 100%;
+	position: absolute;
+	left: 50%;
+	margin-left: -50px;
+	top: 25%;
+}
+.close{
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	right:-30px;
+	top: -30px;
+	background-image: url('images/faild.png');
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+.block{
+	width: 49px;
+	height: 49px;
+	border-right: 1px solid yellow;
+	border-bottom: 1px solid yellow;
+	box-shadow: 0 0 4px #333 inset;
+	background-image: url('images/bg.png');
+	background-size: 100% 100%;
+	float: left;
+}
+.show{
+	background-image: url('images/lei.png');
+	background-size: 100% 100%;
+}
+.num{
+	background: #ECD0A1;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 49px;
+}
+.flag{
+	background-image: url('images/flag.png');
+	background-size: 100% 100%;
+}

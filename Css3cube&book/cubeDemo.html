@@ -25,6 +25,7 @@
         top: 50px;
         transform-origin: center center;
         animation: move 8s infinite;
+        -webkit-animation: move 8s infinite;
     }
     .box .item{
         position: absolute;
@@ -61,6 +62,20 @@
         transform: rotateX(-90deg) translateZ(100px);
     }
     @keyframes move{
+        0%{
+            transform: rotateY(0deg);
+        }
+        50%{
+            transform: rotateY(-720deg);
+        }
+        51%{
+            transform: rotateX(-720deg);
+        }
+        100%{
+            transform: rotateX(0deg);
+        }
+    }
+    @-webkit-keyframes move{
         0%{
             transform: rotateY(0deg);
         }
